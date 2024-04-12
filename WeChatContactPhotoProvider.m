@@ -25,7 +25,7 @@
       NSString *loginInfoPath = [NSString stringWithFormat:@"%@/Documents/LocalInfo.lst", appPath];
       NSDictionary *loginInfo = [NSDictionary dictionaryWithContentsOfFile:loginInfoPath];
       NSString *userID = loginInfo[@"$objects"][2];
-      NSString *userDataName = [self md5:userID];
+      NSString *userDataName = [self sha256:userID];
       NSString *userContactsDBPath = [NSString stringWithFormat:@"%@/Documents/%@/DB/WCDB_Contact.sqlite", appPath, userDataName];
       if (sqlite3_open([userContactsDBPath UTF8String], &db) != SQLITE_OK) {
         sqlite3_close(db);
