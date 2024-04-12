@@ -1,6 +1,6 @@
 TARGET := iphone:clang:latest:15.0
 THEOS_PACKAGE_SCHEME=rootless
-PACKAGE_VERSION = 1.0.6
+PACKAGE_VERSION = 1.0.2
 DEBUG = 1
 FINALPACKAGE = 0
 ARCHS = arm64 arm64e
@@ -21,3 +21,6 @@ BUNDLE_PATH = $($(BUNDLE_NAME)_INSTALL_PATH)/$(BUNDLE_NAME).bundle
 internal-stage::
 	$(ECHO_NOTHING)mkdir -p $(THEOS_STAGING_DIR)$(BUNDLE_PATH)$(ECHO_END)
 	$(ECHO_NOTHING)cp Info.plist $(THEOS_STAGING_DIR)$(BUNDLE_PATH)/Info.plist$(ECHO_END)
+
+after-install::
+	install.exec "killall -9 SpringBoard"
