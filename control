@@ -1,7 +1,7 @@
 Package: shortlook.plugin.contact-photo.wechat
 Name: ShortLook_WeChat
 Depends: mobilesubstrate, shortlook.xina2
-Version: 1.0.6
+Version: 1.0.2
 Architecture: iphoneos-arm
 Description: 当收到微信通知时，在ShortLook中显示微信用户的头像!
 Maintainer: JeffResc
