@@ -12,8 +12,8 @@ BUNDLE_NAME = ShortLook_WeChat
 $(BUNDLE_NAME)_CFLAGS = -fobjc-arc
 $(BUNDLE_NAME)_FILES = $(wildcard *.m)
 $(BUNDLE_NAME)_FRAMEWORKS = UIKit MobileCoreServices
+$(BUNDLE_NAME)_INSTALL_PATH = /var/jb/Library/Dynastic/ShortLook/Plugins/ContactPhotoProviders
 
 include $(THEOS_MAKE_PATH)/bundle.mk
 
-after-install::
-	install.exec "killall -9 SpringBoard"
+BUNDLE_PATH = $($(BUNDLE_NAME)_INSTALL_PATH)/$(BUNDLE_NAME).bundle
